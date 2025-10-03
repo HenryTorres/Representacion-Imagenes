@@ -25,6 +25,11 @@ const searchColor = (code) => {
     return found ? found.color : null;
 }
 
+function isMobile() {
+    return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
+        .test(navigator.userAgent);
+}
+
 // Construir paleta: solo muestra el dígito 0–F dentro del recuadro coloreado
 const paletteDiv = document.getElementById('palette');
 
@@ -57,6 +62,7 @@ function generateGrid() {
             const input = document.createElement('input');
 
             input.maxLength = 1;
+            input.readOnly = true;
 
             input.addEventListener('focus', () => {
                 ultimoInputConFoco = input;
@@ -75,6 +81,7 @@ function generateGrid() {
 
                 moveNext(e.target);
             });
+
             td.appendChild(input);
             tr.appendChild(td);
         }

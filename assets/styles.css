@@ -139,6 +139,19 @@ input[type="number"] {
     background: #666;
 }
 
+@media screen and (width <=600) {
+
+    #grid {
+        margin: 0 auto 5px;
+    }
+
+    #grid input {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+}
+
 @media screen and (width <=390px) {
     h1 {
         font-size: 2em;
