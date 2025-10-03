@@ -15,7 +15,18 @@ h1 {
 }
 
 .controls {
-    margin-bottom: 20px;
+    /* border: 1px solid #fff; */
+    margin: 0 auto 20px;
+    max-width: 300px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    label {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
 }
 
 input[type="number"] {
@@ -24,12 +35,6 @@ input[type="number"] {
     margin: 0 5px;
     text-align: center;
 }
-
-.controls button {
-    width: 70px;
-    padding: 4px;
-}
-
 
 #grid {
     margin: 0 auto 20px;
@@ -63,8 +68,7 @@ input[type="number"] {
 }
 
 /* PALETA: ahora en dos filas encima de la cuadricula */
-.palette,
-.palette2 {
+.palette {
     display: grid;
     grid-template-columns: repeat(8, 40px);
     /* 8 por fila → 2 filas */
@@ -133,4 +137,10 @@ input[type="number"] {
 
 #saveBtn:hover {
     background: #666;
+}
+
+@media screen and (width <=390px) {
+    h1 {
+        font-size: 2em;
+    }
 }
