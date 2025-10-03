@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+body {
+    background: linear-gradient(90deg, rgba(171, 0, 0, 1) 15%, rgba(0, 181, 0, 1) 50%, rgba(0, 0, 181, 1) 85%);
+    color: #fff;
+    font-family: 'Pixelify Sans', cursive;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 4px;
+    margin: 0 5px;
+    text-align: center;
+}
+
+.controls button {
+    width: 70px;
+    padding: 4px;
+}
+
+
+#grid {
+    margin: 0 auto 20px;
+    border-collapse: collapse;
+}
+
+#grid input {
+    font-family: monospace;
+    border: 1px solid #fff;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    background: #3a383d;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+#generateBtn {
+    padding: 10px 20px;
+    background: #444;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+#generateBtn:hover {
+    background: #889e28;
+}
+
+/* PALETA: ahora en dos filas encima de la cuadricula */
+.palette,
+.palette2 {
+    display: grid;
+    grid-template-columns: repeat(8, 40px);
+    /* 8 por fila → 2 filas */
+    grid-auto-rows: 40px;
+    gap: 3px;
+    justify-content: center;
+    margin: 0 auto 18px;
+}
+
+.color-item {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: default;
+    font-weight: bold;
+    font-family: monospace;
+    user-select: none;
+    position: relative;
+    box-sizing: border-box;
+    border: 2px solid #000000;
+    color: #fff;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.9);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(46, 46, 46, 0.795);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.modal-content {
+    max-width: 95%;
+    max-height: 95%;
+}
+
+.modal canvas {
+    border: 2px solid #50b8d8;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+    background: #000;
+}
+
+#saveBtn {
+    padding: 10px 20px;
+    background: #444;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#saveBtn:hover {
+    background: #666;
+}

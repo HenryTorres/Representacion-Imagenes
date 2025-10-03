@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Imágenes</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Representación de las Imágenes</h1>
+    </header>
+
+    <main>
+        <section class="controls">
+            <label>Ancho: <input type="number" id="cols" value="8" min="1"></label>
+            <label>Alto: <input type="number" id="rows" value="8" min="1"></label>
+            <button onclick="generateGrid()">Crear</button>
+        </section>
+
+        <!-- Paleta arriba, 2 filas (8x2) -->
+        <section class="palette" id="palette"></section>
+
+        <table id="grid"></table>
+
+        <button id="generateBtn" onclick="showImage()">Generar Imagen</button>
+    </main>
+
+    <!-- mantiene estructura visual -->
+
+    <footer>
+        <p>Desarrollado por H.T.G.</p>
+    </footer>
+
+    <!-- Modal -->
+    <section class="modal" id="modal">
+        <div class="modal-content">
+            <canvas id="canvas"></canvas>
+            <button id="saveBtn" onclick="saveImage()">Guardar Imagen</button>
+        </div>
+    </section>
+
+    <script src="assets/script.js"></script>
+</body>
+
+</html>
