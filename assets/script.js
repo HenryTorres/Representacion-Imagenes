@@ -57,6 +57,7 @@ function generateGrid() {
     grid.innerHTML = '';
     for (let r = 0; r < rows; r++) {
         const tr = document.createElement('tr');
+
         for (let c = 0; c < cols; c++) {
             const td = document.createElement('td');
             const input = document.createElement('input');
@@ -85,6 +86,7 @@ function generateGrid() {
             td.appendChild(input);
             tr.appendChild(td);
         }
+
         grid.appendChild(tr);
     }
 }
@@ -93,6 +95,7 @@ function moveNext(input) {
     const idx = inputs.indexOf(input);
     if (idx < inputs.length - 1) inputs[idx + 1].focus();
 }
+
 generateGrid();
 
 function showImage() {
