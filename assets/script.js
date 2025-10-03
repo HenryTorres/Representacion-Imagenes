@@ -1,3 +1,5 @@
+let ultimoInputConFoco = null;
+
 // colores y códigos tal como en la versión que querías
 const colors = [
     { code: '0', color: '#000000' },
@@ -27,10 +29,17 @@ const searchColor = (code) => {
 const paletteDiv = document.getElementById('palette');
 
 colors.forEach(c => {
-    const item = document.createElement('div');
+    const item = document.createElement('button');
     item.className = 'color-item';
     item.style.background = c.color;
     item.textContent = c.code; // SOLO el dígito 0..F
+    item.addEventListener('click', () => {
+        if (ultimoInputConFoco) {
+            ultimoInputConFoco.style.background = `${searchColor(c.code)}`;
+            ultimoInputConFoco.value = c.code;
+            moveNext(ultimoInputConFoco);
+        }
+    });
     paletteDiv.appendChild(item);
 });
 
@@ -46,8 +55,14 @@ function generateGrid() {
         for (let c = 0; c < cols; c++) {
             const td = document.createElement('td');
             const input = document.createElement('input');
+
             input.maxLength = 1;
-            input.addEventListener('focus', () => input.select());
+
+            input.addEventListener('focus', () => {
+                ultimoInputConFoco = input;
+                input.select();
+            });
+
             input.addEventListener('input', (e) => {
                 e.target.value = e.target.value.toUpperCase();
 
